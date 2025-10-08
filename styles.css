@@ -1,0 +1,183 @@
+/* --------- Bas --------- */
+:root{
+  --bg: #0b0c0f;
+  --card: #11131a;
+  --elev: #171924;
+  --text: #e9eef7;
+  --muted: #b6c1d3;
+  --brand: #ffd167;
+  --brand-ink: #3b2b00;
+  --accent: #7dd3fc;
+  --ok: #86efac;
+  --danger: #fca5a5;
+  --ring: 0 0 0 3px rgba(125,211,252,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f7f9fc; --card:#ffffff; --elev:#f0f3f9; --text:#111827; --muted:#5b6472;
+    --brand:#ffb703; --brand-ink:#2a1a00; --accent:#0284c7; --ok:#15803d; --danger:#dc2626;
+  }
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background: radial-gradient(1200px 600px at 70% -10%, #14203a 0%, transparent 60%) , var(--bg);
+}
+
+img{ max-width:100%; display:block }
+ul{ list-style:none; padding:0; margin:0 }
+h1,h2,h3{ line-height:1.2; margin:0 0 .4rem }
+p{ margin:.3rem 0 .8rem }
+
+.container{ width:min(1100px, 92%); margin-inline:auto }
+
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem; top:1rem; width:auto; height:auto; background:#fff; color:#000; padding:.5rem .75rem; border-radius:.5rem; z-index:9999;
+}
+
+/* --------- Header --------- */
+.site-header{
+  position:sticky; top:0; z-index:20; backdrop-filter:saturate(140%) blur(6px);
+  background:color-mix(in srgb, var(--bg) 85%, transparent);
+  border-bottom:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 0;
+}
+.brand{ display:flex; align-items:center; gap:.8rem }
+.logo{ font-size:2rem }
+.site-title{ font-size:1.4rem; margin:0 }
+.site-tagline{ margin:0; color:var(--muted); font-size:.92rem }
+
+.site-actions{ display:flex; align-items:center; gap:.6rem }
+.btn{
+  appearance:none; border:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background: var(--card); color:var(--text); padding:.6rem .9rem; border-radius:.7rem; cursor:pointer;
+  transition:.2s transform ease, .2s background-color ease, .2s border-color ease;
+}
+.btn:hover{ transform:translateY(-1px) }
+.btn.primary{ background:var(--brand); color:var(--brand-ink); border-color:transparent; font-weight:600 }
+.btn.ghost{ background:transparent }
+.btn.icon{ aspect-ratio:1/1; padding:.45rem .45rem; display:grid; place-items:center; font-size:1.1rem }
+
+.toolbar{
+  display:grid; grid-template-columns: 1fr auto auto; gap:.8rem 1rem; padding:0 0 1rem;
+}
+.search input{
+  width:100%; padding:.7rem .9rem; border-radius:.7rem; border:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background:var(--card); color:var(--text);
+}
+.chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin:0 }
+.chip{
+  border-radius:999px; border:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background:var(--elev); color:var(--text); padding:.45rem .8rem; cursor:pointer;
+}
+.chip.is-active{ outline:var(--ring); background:color-mix(in srgb, var(--brand) 25%, var(--elev)) }
+
+.sorter{ display:flex; align-items:center; gap:.6rem }
+.sorter select{
+  padding:.55rem .7rem; border-radius:.6rem; border:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background:var(--card); color:var(--text);
+}
+
+/* --------- Grid --------- */
+.section-title{ margin:1.4rem 0 .8rem; font-size:1.35rem }
+.card-grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:1rem }
+.card{
+  grid-column: span 12;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 80%, transparent) 0%, var(--card) 70%);
+  border:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  border-radius:1rem; overflow:hidden;
+  box-shadow: 0 10px 30px color-mix(in srgb, #000 40%, transparent);
+  outline:none;
+}
+.card:focus-visible{ box-shadow: 0 0 0 3px #0000, var(--ring) }
+.card-media img{ width:100%; height:220px; object-fit:cover }
+.card-body{ padding:1rem }
+.card-topline{ display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-bottom:.3rem }
+.card-title{ font-size:1.2rem }
+.favorite{ font-size:1.1rem }
+
+.card-desc{ color:var(--muted) }
+.meta{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem; color:var(--muted); font-size:.95rem;
+}
+.badge{
+  display:inline-block; background:color-mix(in srgb, var(--accent) 25%, var(--elev));
+  color:color-mix(in srgb, var(--accent) 80%, var(--text));
+  border:1px solid color-mix(in srgb, var(--accent) 35%, var(--text) 10%);
+  padding:.15rem .5rem; border-radius:.5rem; font-size:.8rem;
+}
+.dot{ opacity:.5 }
+
+.actions{ margin-top:.6rem; display:flex; gap:.5rem }
+
+.empty{
+  text-align:center; color:var(--muted); padding:2rem 0;
+}
+
+/* Tips */
+.tips{ margin:2rem 0 }
+.tips-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:1rem }
+.tip{
+  grid-column: span 12;
+  background: var(--elev); border:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  border-radius:1rem; padding:1rem;
+}
+
+/* Footer */
+.site-footer{
+  margin-top:3rem; border-top:1px solid color-mix(in srgb, var(--text) 12%, transparent); background: color-mix(in srgb, var(--card) 70%, transparent);
+}
+.footer-inner{ display:grid; grid-template-columns: repeat(12, 1fr); gap:1.2rem; padding:2rem 0 }
+.footer-inner > *:first-child{ grid-column: span 12 }
+.footer-meta{ grid-column: span 12; color:var(--muted) }
+.footer-title{ margin-bottom:.4rem }
+
+.contact-form{
+  display:grid; grid-template-columns: repeat(12, 1fr); gap:.8rem;
+}
+.contact-form label{ grid-column: span 12; display:grid; gap:.25rem; font-weight:600 }
+.contact-form input, .contact-form textarea{
+  width:100%; padding:.65rem .75rem; border-radius:.6rem;
+  border:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background:var(--card); color:var(--text)
+}
+.form-status{ min-height:1.2rem; margin-top:.4rem; color:var(--ok) }
+
+/* ------- Modal ------- */
+dialog{
+  border:none; padding:0; background:#0000;
+}
+.modal-card{
+  width:min(720px, 92%); margin:10vh auto; background:var(--card); color:var(--text);
+  border:1px solid color-mix(in srgb, var(--text) 12%, transparent); border-radius:1rem; overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.5);
+}
+.modal-header, .modal-footer{ padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:.5rem; background:var(--elev) }
+.modal-body{ padding:1rem; max-height:60vh; overflow:auto }
+.modal-header h3{ margin:0; font-size:1.15rem }
+.close{ font-size:1rem }
+
+/* ------- Utilities ------- */
+.visually-hidden{ position:absolute !important; width:1px;height:1px; padding:0;margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+.favorite.is-active{ color:var(--danger) }
+
+/* ------- Responsive ------- */
+@media (min-width: 640px){
+  .card{ grid-column: span 6 }
+  .tip{ grid-column: span 6 }
+  .footer-inner > *:first-child{ grid-column: span 8 }
+  .footer-meta{ grid-column: span 4; text-align:right; align-self:end }
+}
+@media (min-width: 980px){
+  .card{ grid-column: span 4 }
+}

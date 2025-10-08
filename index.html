@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smörgåsbaren – Matiga smörgåsar</title>
+  <meta name="description" content="Rejäla, goda och mättande smörgåsar – recept, tips och inspiration." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥪</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🥪</span>
+        <div>
+          <h1 class="site-title">Smörgåsbaren</h1>
+          <p class="site-tagline">Matiga smörgåsar – recept & inspiration</p>
+        </div>
+      </div>
+
+      <nav class="site-actions" aria-label="Snabbåtgärder">
+        <button id="themeToggle" class="btn icon" aria-pressed="false" aria-label="Växla tema">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <a class="btn ghost" href="#kontakt">Kontakta oss</a>
+      </nav>
+    </div>
+
+    <div class="container toolbar" role="region" aria-label="Filter och sök">
+      <div class="search">
+        <label for="searchInput" class="visually-hidden">Sök smörgåsar</label>
+        <input id="searchInput" type="search" placeholder="Sök t.ex. ‘kyckling’, ‘vego’, ‘rökt lax’ …" autocomplete="off" />
+      </div>
+
+      <fieldset class="chips" aria-label="Kategorier">
+        <legend class="visually-hidden">Filter: kategori</legend>
+        <button class="chip is-active" data-filter="alla" aria-pressed="true">Alla</button>
+        <button class="chip" data-filter="kyckling">Kyckling</button>
+        <button class="chip" data-filter="fisk">Fisk</button>
+        <button class="chip" data-filter="vegetariskt">Vegetariskt</button>
+        <button class="chip" data-filter="vegan">Vegan</button>
+      </fieldset>
+
+      <div class="sorter">
+        <label for="sortSelect">Sortera</label>
+        <select id="sortSelect">
+          <option value="featured">Rekommenderade</option>
+          <option value="price-asc">Pris: lägst först</option>
+          <option value="price-desc">Pris: högst först</option>
+          <option value="kcal-asc">Kalorier: lägst först</option>
+          <option value="kcal-desc">Kalorier: högst först</option>
+          <option value="protein-desc">Protein: högst först</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container content">
+    <section aria-labelledby="gridHeading">
+      <h2 id="gridHeading" class="section-title">Våra favoriter</h2>
+
+      <ul id="cardGrid" class="card-grid">
+        <!-- Card: Kyckling Club -->
+        <li class="card" tabindex="0"
+            data-id="club"
+            data-category="kyckling"
+            data-price="95"
+            data-kcal="640"
+            data-protein="38"
+            data-featured="1">
+          <figure class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop"
+                 alt="Kyckling Club Sandwich i skivor med bacon, sallad och tomat" />
+          </figure>
+          <div class="card-body">
+            <div class="card-topline">
+              <h3 class="card-title">Kyckling Club</h3>
+              <button class="favorite btn icon" aria-label="Lägg till som favorit" title="Favorit">♡</button>
+            </div>
+            <p class="card-desc">Klassisk club med grillad kyckling, krispigt bacon, tomat, romansallad och citronmajonnäs på rostat levain.</p>
+            <div class="meta">
+              <span class="badge">Kyckling</span>
+              <span class="dot">•</span>
+              <span><strong>95 kr</strong></span>
+              <span class="dot">•</span>
+              <span>640 kcal</span>
+              <span class="dot">•</span>
+              <span>38 g protein</span>
+            </div>
+            <div class="actions">
+              <button class="btn primary show-recipe">Recept</button>
+            </div>
+          </div>
+          <template class="recipe">
+            <h4>Ingredienser (2 portioner)</h4>
+            <ul>
+              <li>4 skivor levain</li>
+              <li>200 g grillad kyckling i skivor</li>
+              <li>4 skivor bacon</li>
+              <li>2 blad romansallad</li>
+              <li>1 tomat i skivor</li>
+              <li>2 msk citronmajonnäs</li>
+              <li>Salt & peppar</li>
+            </ul>
+            <h4>Gör så här</h4>
+            <ol>
+              <li>Rosta brödet lätt. Blanda majonnäs med lite citronsaft.</li>
+              <li>Stek baconet knaprigt.</li>
+              <li>Montera: bröd, majonnäs, sallad, kyckling, tomat, bacon, bröd.</li>
+              <li>Dela på mitten och fäst med stickor.</li>
+            </ol>
+          </template>
+        </li>
+
+        <!-- Card: Lax & Dill -->
+        <li class="card" tabindex="0"
+            data-id="lax"
+            data-category="fisk"
+            data-price="105"
+            data-kcal="520"
+            data-protein="32"
+            data-featured="1">
+          <figure class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200&auto=format&fit=crop"
+                 alt="Rökt lax med dill och färskost på rågbröd" />
+          </figure>
+          <div class="card-body">
+            <div class="card-topline">
+              <h3 class="card-title">Rökt lax & dill</h3>
+              <button class="favorite btn icon" aria-label="Lägg till som favorit" title="Favorit">♡</button>
+            </div>
+            <p class="card-desc">Rökt lax, dill- & citronfärskost, gurka och picklad rödlök på rustikt rågbröd.</p>
+            <div class="meta">
+              <span class="badge">Fisk</span>
+              <span class="dot">•</span>
+              <span><strong>105 kr</strong></span>
+              <span class="dot">•</span>
+              <span>520 kcal</span>
+              <span class="dot">•</span>
+              <span>32 g protein</span>
+            </div>
+            <div class="actions">
+              <button class="btn primary show-recipe">Recept</button>
+            </div>
+          </div>
+          <template class="recipe">
+            <h4>Ingredienser (2 portioner)</h4>
+            <ul>
+              <li>2 skivor grovt rågbröd</li>
+              <li>160 g kallrökt lax</li>
+              <li>100 g färskost</li>
+              <li>Dill, citronzest och svartpeppar</li>
+              <li>1/2 gurka i band</li>
+              <li>Picklad rödlök</li>
+            </ul>
+            <h4>Gör så här</h4>
+            <ol>
+              <li>Blanda färskost med dill, citronzest och peppar.</li>
+              <li>Bred på brödet, toppa med gurka, lax och picklad lök.</li>
+            </ol>
+          </template>
+        </li>
+
+        <!-- Card: Grillad Halloumi -->
+        <li class="card" tabindex="0"
+            data-id="halloumi"
+            data-category="vegetariskt"
+            data-price="89"
+            data-kcal="580"
+            data-protein="30"
+            data-featured="1">
+          <figure class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1546549039-49a1a8dc1d51?q=80&w=1200&auto=format&fit=crop"
+                 alt="Grillad halloumi med avokado och pesto i ciabatta" />
+          </figure>
+          <div class="card-body">
+            <div class="card-topline">
+              <h3 class="card-title">Grillad halloumi & pesto</h3>
+              <button class="favorite btn icon" aria-label="Lägg till som favorit" title="Favorit">♡</button>
+            </div>
+            <p class="card-desc">Karamelliserad lök, avokado, ruccola och basilika-pesto i varm ciabatta.</p>
+            <div class="meta">
+              <span class="badge">Vegetariskt</span>
+              <span class="dot">•</span>
+              <span><strong>89 kr</strong></span>
+              <span class="dot">•</span>
+              <span>580 kcal</span>
+              <span class="dot">•</span>
+              <span>30 g protein</span>
+            </div>
+            <div class="actions">
+              <button class="btn primary show-recipe">Recept</button>
+            </div>
+          </div>
+          <template class="recipe">
+            <h4>Ingredienser (2 portioner)</h4>
+            <ul>
+              <li>2 ciabatta</li>
+              <li>200 g halloumi</li>
+              <li>1 gul lök</li>
+              <li>1 avokado</li>
+              <li>2 msk pesto</li>
+              <li>Ruccola</li>
+            </ul>
+            <h4>Gör så här</h4>
+            <ol>
+              <li>Stek löken sakta tills den är söt och mjuk.</li>
+              <li>Grilla halloumi i skivor.</li>
+              <li>Bygg smörgåsen och värm snabbt i ugn/panini-grill.</li>
+            </ol>
+          </template>
+        </li>
+
+        <!-- Card: Kikärtsmacka -->
+        <li class="card" tabindex="0"
+            data-id="kikarts"
+            data-category="vegan"
+            data-price="79"
+            data-kcal="510"
+            data-protein="22"
+            data-featured="0">
+          <figure class="card-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
+                 alt="Vegansk kikärtsröra med pickles och örter på fullkornsbröd" />
+          </figure>
+          <div class="card-body">
+            <div class="card-topline">
+              <h3 class="card-title">Kikärtsröra deluxe</h3>
+              <button class="favorite btn icon" aria-label="Lägg till som favorit" title="Favorit">♡</button>
+            </div>
+            <p class="card-desc">Krämig kikärtsröra med selleri, kapris och dillpickles på rostat fullkornsbröd.</p>
+            <div class="meta">
+              <span class="badge">Vegan</span>
+              <span class="dot">•</span>
+              <span><strong>79 kr</strong></span>
+              <span class="dot">•</span>
+              <span>510 kcal</span>
+              <span class="dot">•</span>
+              <span>22 g protein</span>
+            </div>
+            <div class="actions">
+              <button class="btn primary show-recipe">Recept</button>
+            </div>
+          </div>
+          <template class="recipe">
+            <h4>Ingredienser (2 portioner)</h4>
+            <ul>
+              <li>1 burk kikärter</li>
+              <li>2 msk vegansk majonnäs</li>
+              <li>1 stjälk selleri, finhackad</li>
+              <li>1 msk kapris</li>
+              <li>2 små dillpickles, hackade</li>
+              <li>Citronsaft, salt & peppar</li>
+            </ul>
+            <h4>Gör så här</h4>
+            <ol>
+              <li>Mosa kikärter grovt och blanda med övriga ingredienser.</li>
+              <li>Smaka av och servera på rostat bröd.</li>
+            </ol>
+          </template>
+        </li>
+      </ul>
+
+      <p id="emptyState" class="empty" hidden>Inget matchar din sökning. Justera filter eller prova ett annat sökord.</p>
+    </section>
+
+    <section id="tips" aria-labelledby="tipsHeading" class="tips">
+      <h2 id="tipsHeading" class="section-title">Bygg en riktigt matig macka</h2>
+      <div class="tips-grid">
+        <article class="tip">
+          <h3>1. Brödet</h3>
+          <p>Välj ett stabilt bröd som levain, råg eller ciabatta. Rosta lätt för struktur.</p>
+        </article>
+        <article class="tip">
+          <h3>2. Proteinet</h3>
+          <p>Kyckling, lax, bönor eller ost – sikta på 20–40 g per macka för mättnad.</p>
+        </article>
+        <article class="tip">
+          <h3>3. Fettet</h3>
+          <p>Majonnäs, pesto eller avokado ger saftighet och bär smak.</p>
+        </article>
+        <article class="tip">
+          <h3>4. Syran</h3>
+          <p>Picklad lök, cornichons eller citron lyfter helheten.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="kontakt">
+    <div class="container footer-inner">
+      <div>
+        <h2 class="footer-title">Kontakta Smörgåsbaren</h2>
+        <p>Har du ett favoritrecept? Tipsa oss!</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>
+            Namn
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            E-post
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Meddelande
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Skicka</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="footer-meta">
+        <p>© <span id="year"></span> Smörgåsbaren. All rights förbehållna.</p>
+        <p><small>Denna sida är byggd med ren HTML, CSS & JavaScript.</small></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <dialog id="recipeModal" aria-labelledby="recipeTitle">
+    <form method="dialog" class="modal-card" id="recipeCard">
+      <header class="modal-header">
+        <h3 id="recipeTitle">Recept</h3>
+        <button value="close" class="btn icon close" aria-label="Stäng">✕</button>
+      </header>
+      <div class="modal-body" id="recipeContent">
+        <!-- Fylls dynamiskt -->
+      </div>
+      <footer class="modal-footer">
+        <button value="close" class="btn">Stäng</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
